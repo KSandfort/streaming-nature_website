@@ -1,4 +1,5 @@
-import YouTubePlayer from './YouTubePlayer';
+import SourceTimer from "./SourceTimer";
+import YouTubePlayer from "./YouTubePlayer";
 
 function MainContent() {
   return (
@@ -7,6 +8,7 @@ function MainContent() {
         <div className="col col-lg-2">Metadata</div>
         <div className="col-8 h-75 bg-light border">
           <YouTubePlayer />
+          <SourceTimer />
         </div>
         <div className="col col-lg-2">Additional Information</div>
       </div>
