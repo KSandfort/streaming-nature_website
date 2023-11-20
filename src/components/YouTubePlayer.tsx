@@ -1,9 +1,9 @@
 import YouTube from "react-youtube";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const YouTubePlayer = () => {
   // Adapt the refresh interval
-  const refrestIntervalMs: number = 8000;
+  const refrestIntervalMs: number = 10000;
 
   // List of all video IDs that are being toggled
   const videoIds = ["VUJbDTIYlM4", "Ihr_nwydXi0", "dlP_vzAxX_8"];
@@ -21,8 +21,8 @@ const YouTubePlayer = () => {
   }, []);
 
   const opts = {
-    height: "390",
-    width: "640",
+    height: "540",
+    width: "960",
     playerVars: {
       autoplay: 1, // Set to 1 for autoplay
     },
