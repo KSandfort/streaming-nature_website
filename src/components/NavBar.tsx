@@ -1,6 +1,8 @@
+import "../../scss/custom.scss";
+
 function NavBar() {
   return (
-    <ul className="nav justify-content-center display-6 bg-dark">
+    <ul className="nav justify-content-center display-6 bg-secondary">
       <li className="nav-item">
         <a className="nav-link" href="#">
           Home

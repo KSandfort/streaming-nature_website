@@ -1,0 +1,5 @@
+$primary: #00f7ff;
+$secondary: rgb(0, 255, 21);
+
+// Re-compile Bootstrap with the updated variables
+@import "../node_modules/bootstrap/scss/bootstrap";

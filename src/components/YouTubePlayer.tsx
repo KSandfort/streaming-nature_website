@@ -8,11 +8,12 @@ const YouTubePlayer = () => {
   // List of all video IDs that are being toggled
   const videoIds = ["VUJbDTIYlM4", "Ihr_nwydXi0", "dlP_vzAxX_8"];
 
+  // Source: https://devtrium.com/posts/set-interval-react
+  // Creates an interval to update component
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("This will be called every 3 seconds.");
       setCounter((prevCounter) => prevCounter + 1);
     }, refrestIntervalMs);
 
