@@ -5,7 +5,6 @@ import MainContent from "./components/MainContent";
 import NavBar from "./components/NavBar";
 import TestButton from "./components/TestButton";
 import TopHeader from "./components/TopHeader";
-import WordCloud from "./components/WordCloud";
 
 function App() {
   return (
