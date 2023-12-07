@@ -6,7 +6,12 @@ const TestButton: React.FC = () => {
       const response = await fetch(
         "http://127.0.0.1:8000/v1/streams?score_number=0"
       );
-      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
+
+      const data = await response.text();
       console.log("Fetched Data:", data);
     } catch (error) {
       console.error("Error fetching data:", error);

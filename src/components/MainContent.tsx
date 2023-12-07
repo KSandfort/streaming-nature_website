@@ -63,12 +63,12 @@ function MainContent() {
   };
 
   return (
-    <div className="container-fluid text-center mt-5">
+    <div className="container-fluid text-center mt-3">
       <div className="row justify-content-md-center">
         <div className="col">
           <WordCloud words={words} handleWordClick={handleWordClick} />
         </div>
-        <div className="col-7 bg-light">
+        <div className="col-7 bg-secondary rounded">
           <br />
           <YouTubePlayer />
           <SourceTimer />

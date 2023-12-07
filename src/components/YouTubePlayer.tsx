@@ -15,6 +15,7 @@ const YouTubePlayer = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prevCounter) => prevCounter + 1);
+      console.log("Change stream");
     }, refrestIntervalMs);
 
     return () => clearInterval(interval);

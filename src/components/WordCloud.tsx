@@ -22,7 +22,7 @@ const WordCloud: React.FC<WordCloudProps> = ({ words, handleWordClick }) => {
   };
 
   const wordCloudStyle = {
-    height: "800px", // Set the desired height here
+    height: "700px", // Set the desired height here
     width: "100%", // Set the width or adjust as needed
   };
 
@@ -34,7 +34,7 @@ const WordCloud: React.FC<WordCloudProps> = ({ words, handleWordClick }) => {
   };
 
   return (
-    <div className="container-sm bg-secondary" style={wordCloudStyle}>
+    <div className="container-sm bg-secondary rounded" style={wordCloudStyle}>
       <ReactWordcloud words={words} options={options} callbacks={callbacks} />
     </div>
   );
