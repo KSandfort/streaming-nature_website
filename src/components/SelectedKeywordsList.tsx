@@ -1,4 +1,4 @@
-const KeywordList = () => {
+const SelectedKeywordsList = () => {
   return (
     <ul className="list-group">
       <li className="list-group-item disabled">Cras justo odio</li>
@@ -10,4 +10,4 @@ const KeywordList = () => {
   );
 };
 
-export default KeywordList;
+export default SelectedKeywordsList;

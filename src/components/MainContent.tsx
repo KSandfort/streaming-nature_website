@@ -1,4 +1,5 @@
-import KeywordList from "./KeywordList";
+import SelectedKeywordsList from "./SelectedKeywordsList";
+//import KeywordList from "../utils/KeywordList";
 import SourceTimer from "./SourceTimer";
 import WordCloud from "./WordCloud";
 import YouTubePlayer from "./YouTubePlayer";
@@ -56,6 +57,8 @@ const words = [
   { text: "Walrus", value: 69 },
 ];
 
+//const keywordList = KeywordList.getInstance();
+
 function MainContent() {
   const handleWordClick = (word: string) => {
     // Handle the click on a word (e.g., perform an action)
@@ -74,7 +77,7 @@ function MainContent() {
           <SourceTimer />
         </div>
         <div className="col">
-          <KeywordList />
+          <SelectedKeywordsList />
         </div>
       </div>
     </div>
