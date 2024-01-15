@@ -3,7 +3,7 @@ import "../../scss/custom.scss";
 
 interface WordCloudProps {
   words: { text: string; value: number }[];
-  handleWordClick: (word: string) => void;
+  handleWordClick: (word: { text: string; value: number }) => void;
 }
 
 const WordCloud: React.FC<WordCloudProps> = ({ words, handleWordClick }) => {
@@ -28,7 +28,7 @@ const WordCloud: React.FC<WordCloudProps> = ({ words, handleWordClick }) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const callbacks: any = {
-    onWordClick: (word: string) => {
+    onWordClick: (word: { text: string; value: number }) => {
       handleWordClick(word);
     },
   };

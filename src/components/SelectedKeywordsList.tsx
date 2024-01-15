@@ -1,11 +1,24 @@
-const SelectedKeywordsList = () => {
+interface ListGroupProps {
+  items: { text: string; value: number }[];
+  onItemRemove: (item: { text: string; value: number }) => void;
+}
+
+const SelectedKeywordsList: React.FC<ListGroupProps> = ({
+  items,
+  onItemRemove,
+}) => {
   return (
     <ul className="list-group">
-      <li className="list-group-item disabled">Cras justo odio</li>
-      <li className="list-group-item">Dapibus ac facilisis in</li>
-      <li className="list-group-item">Morbi leo risus</li>
-      <li className="list-group-item">Porta ac consectetur ac</li>
-      <li className="list-group-item">Vestibulum at eros</li>
+      {items.map((item) => (
+        <li
+          className="list-group-item"
+          key={item.text}
+          style={{ margin: "5px", cursor: "pointer" }}
+          onClick={() => onItemRemove(item)}
+        >
+          {item.text}
+        </li>
+      ))}
     </ul>
   );
 };
