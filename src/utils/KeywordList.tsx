@@ -12,6 +12,18 @@ class KeywordList {
     { text: "Kangaroo", value: 28 },
     { text: "Hippo", value: 42 },
     { text: "Monkey", value: 63 },
+  ];
+
+  private aLotOfWords = [
+    { text: "Lion", value: 34 },
+    { text: "Elephant", value: 52 },
+    { text: "Tiger", value: 21 },
+    { text: "Giraffe", value: 66 },
+    { text: "Zebra", value: 48 },
+    { text: "Panda", value: 15 },
+    { text: "Kangaroo", value: 28 },
+    { text: "Hippo", value: 42 },
+    { text: "Monkey", value: 63 },
     { text: "Penguin", value: 19 },
     { text: "Crocodile", value: 37 },
     { text: "Koala", value: 57 },
