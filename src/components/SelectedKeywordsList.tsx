@@ -1,3 +1,5 @@
+import ListInfoAlarm from "./ListInfoAlarm";
+
 interface ListGroupProps {
   items: { text: string; value: number }[];
   onItemRemove: (item: { text: string; value: number }) => void;
@@ -9,6 +11,7 @@ const SelectedKeywordsList: React.FC<ListGroupProps> = ({
 }) => {
   return (
     <ul className="list-group">
+      {items.length === 0 ? <ListInfoAlarm /> : null}
       {items.map((item) => (
         <li
           className="list-group-item"
