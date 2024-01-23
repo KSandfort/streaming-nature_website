@@ -3,10 +3,14 @@ import SelectedKeywordsList from "./SelectedKeywordsList";
 import SourceTimer from "./SourceTimer";
 import WordCloud from "./WordCloud";
 import YouTubePlayer from "./YouTubePlayer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function MainContent() {
   const keywordList = KeywordList.getInstance();
+
+  useEffect(() => {
+    console.log(listGroup);
+  });
 
   const [listGroup, setListGroup] = useState<{ text: string; value: number }[]>(
     []
@@ -14,7 +18,13 @@ function MainContent() {
 
   const handleWordCloudClick = (word: { text: string; value: number }) => {
     //setWordCloud((prev) => prev.filter((w) => w !== word));
-    setListGroup((prev) => [...prev, word]);
+    //listGroup.some((obj) => obj.text.includes(word.text));
+    if (!listGroup.some((obj) => obj.text.includes(word.text))) {
+      setListGroup((prev) => [...prev, word]);
+      console.log(listGroup);
+      console.log(listGroup.length);
+      console.log(word.text);
+    }
   };
 
   const handleListItemClick = (item: { text: string; value: number }) => {

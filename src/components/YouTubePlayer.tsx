@@ -1,25 +1,26 @@
 import YouTube from "react-youtube";
-import { useState, useEffect } from "react";
 
 const YouTubePlayer = () => {
-  // Adapt the refresh interval
-  const refrestIntervalMs: number = 10000;
+  let currentURL = "";
 
-  // List of all video IDs that are being toggled
-  const videoIds = ["VUJbDTIYlM4", "Ihr_nwydXi0", "dlP_vzAxX_8"];
+  const fetchStreamURL = async () => {
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/v1/streams?score_number=0"
+      );
 
-  // Source: https://devtrium.com/posts/set-interval-react
-  // Creates an interval to update component
-  const [counter, setCounter] = useState(0);
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 1);
-      console.log("Change stream");
-    }, refrestIntervalMs);
-
-    return () => clearInterval(interval);
-  }, []);
+      const data = await response.text();
+      console.log("Fetched Data:", data);
+      currentURL = data.toString();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   const opts = {
     height: "540",
@@ -30,17 +31,11 @@ const YouTubePlayer = () => {
   };
 
   const onReady = (event: { target: { playVideo: () => void } }) => {
-    // You can do something when the player is ready
     event.target.playVideo(); // Autoplay the video when the player is ready
+    fetchStreamURL();
   };
 
-  return (
-    <YouTube
-      videoId={videoIds[counter % videoIds.length]}
-      opts={opts}
-      onReady={onReady}
-    />
-  );
+  return <YouTube videoId={currentURL} opts={opts} onReady={onReady} />;
 };
 
 export default YouTubePlayer;

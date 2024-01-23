@@ -14,6 +14,7 @@ class KeywordList {
     { text: "Monkey", value: 63 },
   ];
 
+  // @ts-expect-error placeholder
   private aLotOfWords = [
     { text: "Lion", value: 34 },
     { text: "Elephant", value: 52 },
