@@ -14,23 +14,24 @@ function NavBar() {
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          About
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            About
+          </Link>
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          Team
+          <Link to="/team" style={{ textDecoration: "none" }}>
+            Team
+          </Link>
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
-          References
+          <Link to="/references" style={{ textDecoration: "none" }}>
+            References
+          </Link>
         </a>
-      </li>
-      <li className="nav-item">
-        <button type="button" className="btn btn-light">
-          <Link to="/login">Login</Link>
-        </button>
       </li>
     </ul>
   );
