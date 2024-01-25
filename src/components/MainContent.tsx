@@ -1,12 +1,34 @@
-import KeywordList from "../utils/KeywordList";
 import SelectedKeywordsList from "./SelectedKeywordsList";
 import SourceTimer from "./SourceTimer";
 import WordCloud from "./WordCloud";
 import YouTubePlayer from "./YouTubePlayer";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function MainContent() {
-  const keywordList = KeywordList.getInstance();
+  //const keywordList = KeywordList.getInstance();
+
+  interface DataItem {
+    text: string;
+    value: number;
+  }
+
+  const [dataList, setDataList] = useState<DataItem[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/v1/word-cloud");
+        const responseData: DataItem[] = response.data;
+
+        setDataList(responseData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     console.log(listGroup);
@@ -21,25 +43,19 @@ function MainContent() {
     //listGroup.some((obj) => obj.text.includes(word.text));
     if (!listGroup.some((obj) => obj.text.includes(word.text))) {
       setListGroup((prev) => [...prev, word]);
-      console.log(listGroup);
-      console.log(listGroup.length);
       console.log(word.text);
     }
   };
 
   const handleListItemClick = (item: { text: string; value: number }) => {
     setListGroup((prev) => prev.filter((i) => i !== item));
-    //setWordCloud((prev) => [...prev, item]);
   };
 
   return (
     <div className="container-fluid text-center mt-3">
       <div className="row justify-content-md-center">
         <div className="col">
-          <WordCloud
-            words={keywordList.getWordList()}
-            handleWordClick={handleWordCloudClick}
-          />
+          <WordCloud words={dataList} handleWordClick={handleWordCloudClick} />
         </div>
         <div className="col-7 bg-secondary rounded">
           <br />
