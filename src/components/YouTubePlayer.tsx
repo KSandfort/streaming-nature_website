@@ -16,9 +16,7 @@ const YouTubePlayer = () => {
 
     const fetchStreamURL = async () => {
       try {
-        const response = await fetch(
-          "http://127.0.0.1:8000/v1/streams?score_number=0"
-        );
+        const response = await fetch("http://http://127.0.0.1:8000/v1/streams");
 
         if (!response.ok) {
           throw new Error("Network response was not ok.");
@@ -37,8 +35,8 @@ const YouTubePlayer = () => {
   }, [counter]);
 
   const opts = {
-    height: "540",
-    width: "960",
+    height: "480",
+    width: "720",
     playerVars: {
       autoplay: 1, // Set to 1 for autoplay
     },

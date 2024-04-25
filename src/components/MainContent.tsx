@@ -1,9 +1,8 @@
 import SelectedKeywordsList from "./SelectedKeywordsList";
-import SourceTimer from "./SourceTimer";
 import WordCloud from "./WordCloud";
-import YouTubePlayer from "./YouTubePlayer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import StreamFrame from "./StreamFrame";
 
 function MainContent() {
   //const keywordList = KeywordList.getInstance();
@@ -44,6 +43,14 @@ function MainContent() {
     if (!listGroup.some((obj) => obj.text.includes(word.text))) {
       setListGroup((prev) => [...prev, word]);
       console.log(word.text);
+      axios
+        .post("http://127.0.0.1/v1/word_cloud/votes", word)
+        .then((response) => {
+          console.log("Response:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     }
   };
 
@@ -59,8 +66,7 @@ function MainContent() {
         </div>
         <div className="col-7 bg-secondary rounded">
           <br />
-          <YouTubePlayer />
-          <SourceTimer />
+          <StreamFrame />
         </div>
         <div className="col">
           <SelectedKeywordsList
