@@ -1,4 +1,5 @@
 import "../../scss/custom.scss";
+import WorldMapPanel from "../components/WorldMapPanel";
 
 import Footer from "./../components/Footer";
 import MainContent from "./../components/MainContent";
@@ -13,6 +14,7 @@ function Home() {
         <NavBar />
       </header>
       <MainContent />
+      <WorldMapPanel />
       <Footer />
     </div>
   );

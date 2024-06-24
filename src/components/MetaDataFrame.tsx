@@ -28,7 +28,7 @@ function MetaDataFrame() {
   return (
     <div className="container">
       <div className="row">
-        <p>{data}</p>
+        <p>Location Info</p>
       </div>
       <div className="row">
         <p>Weather Info</p>
