@@ -22,7 +22,7 @@ const WordCloud: React.FC<WordCloudProps> = ({ words, handleWordClick }) => {
   };
 
   const wordCloudStyle = {
-    height: "700px", // Set the desired height here
+    height: "1000px", // Set the desired height here
     width: "100%", // Set the width or adjust as needed
   };
 
