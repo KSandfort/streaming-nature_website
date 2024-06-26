@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const longitude = -0.09; // Replace with your longitude
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="p-5 d-flex justify-content-center">
       <WorldMap latitude={latitude} longitude={longitude} />
     </div>
   );

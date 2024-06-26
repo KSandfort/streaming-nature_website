@@ -1,13 +1,13 @@
 import YouTubePlayer from "./YouTubePlayer";
 import "../../scss/custom.scss";
 import MetaDataFrame from "./MetaDataFrame";
-import SubtitleFrame from "./SubtitleFrame";
+import WorldMapPanel from "./WorldMapPanel";
 
 function StreamFrame() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-6">
+        <div className="col">
           <YouTubePlayer />
         </div>
         <div className="col">
@@ -15,7 +15,7 @@ function StreamFrame() {
         </div>
       </div>
       <div className="row">
-        <SubtitleFrame />
+        <WorldMapPanel />
       </div>
     </div>
   );

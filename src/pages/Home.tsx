@@ -14,7 +14,6 @@ function Home() {
         <NavBar />
       </header>
       <MainContent />
-      <WorldMapPanel />
       <Footer />
     </div>
   );
