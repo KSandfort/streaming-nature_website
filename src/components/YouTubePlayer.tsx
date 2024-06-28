@@ -1,6 +1,6 @@
 function YouTubePlayer() {
-  const embedUrl =
-    "https://www.youtube.com/embed/live_stream?channel=UCHk9qZcr6xQ1TdCI7F0u5QA";
+  const embedUrl = "https://www.youtube.com/watch?v=aKUOUsTUJC8&t=74s";
+  // "https://www.youtube.com/embed/live_stream?channel=UCHk9qZcr6xQ1TdCI7F0u5QA";
 
   return (
     <div className="youtube-embed">

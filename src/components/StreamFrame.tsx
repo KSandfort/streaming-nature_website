@@ -1,4 +1,4 @@
-import YouTubePlayer from "./YouTubePlayer";
+import YouTubePlayer from "./YouTubePlayer_old";
 import "../../scss/custom.scss";
 import MetaDataFrame from "./MetaDataFrame";
 import WorldMapPanel from "./WorldMapPanel";

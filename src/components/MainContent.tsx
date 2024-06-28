@@ -12,8 +12,32 @@ function MainContent() {
     value: number;
   }
 
-  const [dataList, setDataList] = useState<DataItem[]>([]);
+  const dataList: DataItem[] = [
+    { text: "Dog", value: 5 },
+    { text: "Cat", value: 3 },
+    { text: "Elephant", value: 7 },
+    { text: "Lion", value: 6 },
+    { text: "Tiger", value: 4 },
+    { text: "Bear", value: 8 },
+    { text: "Giraffe", value: 2 },
+    { text: "Zebra", value: 9 },
+    { text: "Monkey", value: 1 },
+    { text: "Panda", value: 10 },
+    { text: "Kangaroo", value: 5 },
+    { text: "Leopard", value: 3 },
+    { text: "Wolf", value: 7 },
+    { text: "Fox", value: 6 },
+    { text: "Rabbit", value: 4 },
+    { text: "Deer", value: 8 },
+    { text: "Hippopotamus", value: 2 },
+    { text: "Crocodile", value: 9 },
+    { text: "Koala", value: 1 },
+    { text: "Penguin", value: 10 },
+  ];
 
+  // const [dataList, setDataList] = useState<DataItem[]>([]);
+
+  /*
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,6 +56,7 @@ function MainContent() {
   useEffect(() => {
     console.log(listGroup);
   });
+  */
 
   const [listGroup, setListGroup] = useState<{ text: string; value: number }[]>(
     []
